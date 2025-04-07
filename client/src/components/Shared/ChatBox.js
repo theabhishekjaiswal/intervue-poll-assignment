@@ -8,15 +8,32 @@ function ChatBox({ socket, user }) {
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    // Fetch chat history
+    // // Fetch chat history
+    // const fetchChatHistory = async () => {
+    //   try {
+    //     const response = await axios.get('/api/chat');
+    //     setMessages(response.data);
+    //   } catch (error) {
+    //     console.error('Error fetching chat history:', error);
+    //   }
+    // };
     const fetchChatHistory = async () => {
       try {
         const response = await axios.get('/api/chat');
-        setMessages(response.data);
+        const data = response.data;
+    
+        if (Array.isArray(data)) {
+          setMessages(data);
+        } else {
+          console.warn('Chat history is not an array:', data);
+          setMessages([]); // fallback to empty chat
+        }
       } catch (error) {
         console.error('Error fetching chat history:', error);
+        setMessages([]); // prevent map crash if request fails
       }
     };
+    
 
     fetchChatHistory();
 
