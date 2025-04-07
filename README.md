@@ -12,7 +12,7 @@ A real-time poll web app built as part of the SDE Internship assignment for **In
 
 ## 🎥 Demo Video
 
-📽️ [Click to Watch Demo]([https://www.loom.com/share/your-demo-video-link-here](https://youtu.be/zW4GTGVrekI?feature=shared))  
+📽️ [Click to Watch Demo](https://youtu.be/zW4GTGVrekI?feature=shared)  
 
 ---
 
