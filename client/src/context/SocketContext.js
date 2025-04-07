@@ -12,7 +12,7 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     // Connect to the socket server
-    const newSocket = io(process.env.REACT_APP_API_URL || 'http://localhost:5000');
+    const newSocket = io(process.env.REACT_APP_API_URL || 'https://intervue-poll-assignment.onrender.com');
     setSocket(newSocket);
 
     return () => {
